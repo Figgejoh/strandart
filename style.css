@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.rotating__sun {
+  width: 500px;
+  height: 500px;
+  animation-name: rotating;
+  animation-duration: 5s;
+  margin-left: 10px;
+  position: absolute;
+}
+
+:root {
+  --primary-color: #edac76;
+  --secondary-color: #181f35;
+  --third-color: #485b69;
+  --primary-font-family: "Gwendolyn", cursive;
+}
+
+.top-bar {
+  display: flex;
+  width: 100%;
+  height: 5vh;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  gap: 50px;
+  font-size: 40px;
+}
+
+.nav.sticky {
+  position: fixed;
+}
+
+a {
+  text-decoration: none;
+  color: #485b69;
+}
+
+.header {
+  width: 100%;
+  height: 95vh;
+  font-size: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gwendolyn", cursive;
+  font-weight: bold;
+  color: #485b69;
+}
+
+/* Painting section */
+.section1 {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.painting__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--primary-color);
+  height: 700px;
+  width: 90%;
+  overflow: hidden;
+}
+
+.paintings__slider {
+  display: flex;
+  gap: 20px;
+}
+
+.painting__card {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 400px;
+  justify-content: center;
+  font-size: 40px;
+  font-family: var(--primary-font-family);
+  font-weight: bold;
+  text-align: center;
+}
+
+.card {
+  width: 396px;
+  height: 550px;
+  display: flex;
+}
+
+.like__button {
+  position: relative;
+  left: 150px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.slider-wrapper .image-list {
+  display: grid;
+  gap: 18px;
+  font-size: 0;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.slider-wrapper .image-list::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-wrapper .image-list .image-item {
+  width: 325px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.container {
+  max-width: 1200px;
+  width: 95;
+}
+
+.container .slider-scrollbar {
+  height: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slider-scrollbar .scrollbar-track {
+  height: 2px;
+  width: 100%;
+  background: var(--third-color);
+  position: relative;
+  border-radius: 4px;
+}
+
+.slider-scrollbar:hover .scrollbar-track {
+  height: 4px;
+}
+
+.slider-scrollbar .scrollbar-thumb {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background: #edac76;
+  border-radius: inherit;
+  cursor: grab;
+}
+
+.slider-scrollbar .scrollbar-thumb:active {
+  cursor: grabbing;
+  height: 8px;
+  top: -2px;
+}
+
+.slider-scrollbar .scrollbar-thumb::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  bottom: -10px;
+}
